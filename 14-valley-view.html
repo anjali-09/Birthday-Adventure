@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 14 - Valley View</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 14</div>
+<h1>Valley View</h1>
+<div class="subtitle">Standing at the edge, looking down at how far we've come. Some friendships are like valleys — deep, wide, and impossible to cross alone.</div>
+<div class="level" id="quiz">
+<div class="question">What's the most useless skill we've developed together? 😂</div>
+<div class="option" onclick="check('a')">Communicating entirely through memes</div>
+<div class="option" onclick="check('b')">Finishing each other's sentences</div>
+<div class="option" onclick="check('c')">Knowing exactly when the other is lying</div>
+<div class="option" onclick="check('d')">Planning trips we never go on</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🔥 Roast Unlocked</div>
+<h3>Valley Viewed!</h3>
+<p>Our meme game is elite. Full conversations, zero actual words. If this was a degree, we'd both have PhDs. 😂📱</p>
+<div class="roast-card">🔥 <strong>Official Roast #2:</strong><br><br>We have an entire friendship that runs on forwarded reels and memes sent at 3 AM. If WhatsApp ever shuts down, do we even know how to talk to each other normally? Probably not. And honestly? No regrets. 💀📱</div>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Useless but impressive. Think digital.","We do this daily. DAILY. 📱","The one that requires zero effort.","Memes. It's always memes."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

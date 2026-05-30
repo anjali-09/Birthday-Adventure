@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 08 - Sunrise Ridge</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 08</div>
+<h1>Sunrise Ridge</h1>
+<div class="subtitle">4 AM alarm, freezing cold, but we still dragged ourselves out. The sunrise made it worth it na — or was it the chai after?</div>
+<div class="level" id="quiz">
+<div class="question">What do we always end up fighting about on every trip? 😤</div>
+<div class="option" onclick="check('a')">Who gets the window seat</div>
+<div class="option" onclick="check('b')">Music control in the car</div>
+<div class="option" onclick="check('c')">Who forgot to pack what</div>
+<div class="option" onclick="check('d')">Where to eat</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">😂 Meme Unlocked</div>
+<h3>Ridge Reached!</h3>
+<p>The aux cord war is real. Every single trip, same fight, no resolution. And honestly? Wouldn't have it any other way. 🎵😂</p>
+<img src="images/level8.jpg" alt="Meme" class="memory-photo">
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ That's annoying but not THE fight.","Think about what happens every car ride 😂","The real war. You know which one. 🎵","It's about the aux. Always the aux."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

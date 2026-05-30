@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 15 - Halfway Camp</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 15</div>
+<h1>Halfway Camp</h1>
+<div class="subtitle">Halfway through the journey. Tent's up, fire's going. This is the part where we stop and appreciate how far we've come together.</div>
+<div class="level" id="quiz">
+<div class="question">If we had to describe our friendship in one line to a stranger, what would it be? 🏕️</div>
+<div class="option" onclick="check('a')">"We're basically the same person in two bodies"</div>
+<div class="option" onclick="check('b')">"We roast each other but would take a bullet"</div>
+<div class="option" onclick="check('c')">"Low maintenance, high loyalty"</div>
+<div class="option" onclick="check('d')">"Started with a trip, never really ended"</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">💌 Birthday Letter Unlocked</div>
+<h3>Camp Set Up!</h3>
+<div class="letter-reward">Halfway through 29 levels, and honestly? This friendship doesn't need big gestures or daily texts. It just works. Low maintenance, high loyalty — that's always been us. No drama, no effort, just there. Always there. And that's the rarest thing in the world. 🏕️🤝</div>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='c'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ True, but not the core of it.","Think about what makes us different from others.","The one that's effortless. Like us.","Simple. Real. No fluff."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

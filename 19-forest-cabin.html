@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 19 - Forest Cabin</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 19</div>
+<h1>Forest Cabin</h1>
+<div class="subtitle">A wooden cabin in the middle of nowhere. No distractions, just us being us. This is where the real talk happens.</div>
+<div class="level" id="quiz">
+<div class="question">What's the one thing about our friendship that surprises other people? 🏡</div>
+<div class="option" onclick="check('a')">How different we are but still click</div>
+<div class="option" onclick="check('b')">That we don't talk every day but nothing changes</div>
+<div class="option" onclick="check('c')">How brutally honest we are with each other</div>
+<div class="option" onclick="check('d')">That we've never had a serious fight</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🔥 Roast Unlocked</div>
+<h3>Cabin Unlocked!</h3>
+<p>We don't talk for weeks and then pick up exactly where we left off. People find that weird. We find it perfect. 🏡</p>
+<div class="roast-card">🔥 <strong>Official Roast #3:</strong><br><br>You disappear for 2 weeks, no text, no call, nothing. Then suddenly at 1 AM: "bhai sun." And I'm supposed to act like that's normal? It IS normal for us. But still. The audacity. 💀😂</div>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ True but not what shocks people.","Think about our texting frequency 😂","The thing that looks weird from outside.","No daily texts. Still solid. That's the one."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

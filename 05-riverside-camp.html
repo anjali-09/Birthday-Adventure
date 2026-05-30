@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 05 - Riverside Camp</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 05</div>
+<h1>Riverside Camp</h1>
+<div class="subtitle">River ke paas tent laga hai, stars are out, campfire's going. This is where the best conversations happen — the ones you never plan.</div>
+<div class="level" id="quiz">
+<div class="question">What's the highest altitude place we've dreamed of visiting together? 🗻</div>
+<div class="option" onclick="check('a')">Leh-Ladakh</div>
+<div class="option" onclick="check('b')">Valley of Flowers</div>
+<div class="option" onclick="check('c')">Rohtang Pass</div>
+<div class="option" onclick="check('d')">Kedarnath</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🎬 Video Unlocked</div>
+<h3>Camp Secured!</h3>
+<p>One day we'll actually make it there. Until then, this memory keeps the dream alive. 🏔️</p>
+<video controls src="videos/level5.mp4"></video>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Higher. Think higher.","Not that one 🌌","Still at base camp mentally 😂","Think BIG altitude 🏔️"];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

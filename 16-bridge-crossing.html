@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 16 - Bridge Crossing</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 16</div>
+<h1>Bridge Crossing</h1>
+<div class="subtitle">A shaky rope bridge over a river. You don't look down, you just trust the person walking with you.</div>
+<div class="level" id="quiz">
+<div class="question">What's the one thing we've been through together that made our friendship stronger? 🌉</div>
+<div class="option" onclick="check('a')">A fight that almost ended things</div>
+<div class="option" onclick="check('b')">Being there during a really tough time</div>
+<div class="option" onclick="check('c')">A trip that tested our patience</div>
+<div class="option" onclick="check('d')">Distance that could've drifted us apart but didn't</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🎵 Voice Note Unlocked</div>
+<h3>Bridge Crossed!</h3>
+<p>Distance tried its best. Different cities, different schedules, different lives. But somehow we stayed exactly the same. That's not luck — that's choice. 🌉</p>
+<audio controls src="audio/level16.mp3"></audio>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='d'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ We've had that, but something bigger tested us.","Think about what actually tried to pull us apart.","The silent test. The long one.","Distance. That's the real bridge."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 04 - Forest Crossing</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 04</div>
+<h1>Forest Crossing</h1>
+<div class="subtitle">Sunlight through the trees, path quiet hai, playlist full volume. Every forest has a soundtrack — what's yours?</div>
+<div class="level" id="quiz">
+<div class="question">What song would I 100% play on repeat during a road trip? 🎧</div>
+<div class="option" onclick="check('a')">Ilahi</div>
+<div class="option" onclick="check('b')">Kun Faya Kun</div>
+<div class="option" onclick="check('c')">Kali Kali Zulfein</div>
+<div class="option" onclick="check('d')">Safar</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🎵 Voice Note Unlocked</div>
+<h3>Forest Crossed!</h3>
+<p>You know the vibe. Windows down + this song = world disappears. 🌅</p>
+<audio controls autoplay id="reward-audio" src="audio/level4.mp3"></audio>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='c'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';document.getElementById('reward-audio').play();}
+else{wrongs++;const r=["❌ Wrong tune. Think deeper.","Not this one. Feel the vibe 📻","You clearly haven't been paying attention 😤","One more chance — dil se soch 🌍"];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

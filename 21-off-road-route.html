@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 21 - Off-Road Route</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 21</div>
+<h1>Off-Road Route</h1>
+<div class="subtitle">The GPS says turn back. We say keep going. Some of our best stories started with "this is probably a bad idea."</div>
+<div class="level" id="quiz">
+<div class="question">What's the worst advice we've ever given each other that somehow worked out? 😂</div>
+<div class="option" onclick="check('a')">"Just send it" (the text, the application, the risky move)</div>
+<div class="option" onclick="check('b')">"Sab theek ho jaayega" with zero plan</div>
+<div class="option" onclick="check('c')">"Bro just wing it"</div>
+<div class="option" onclick="check('d')">"Worst case kya hoga" (famous last words)</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🎬 Funny Video Unlocked</div>
+<h3>Off-Road Survived!</h3>
+<p>"Just send it" has caused more chaos and more wins than any actual advice ever could. Our friendship runs on blind confidence and zero regrets. 😂🚀</p>
+<video controls src="videos/level21.mp4"></video>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Bad advice, but not THE one.","Think about what we say before risky moves 🚀","Two words. That's all it takes.","Just. Send. It."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

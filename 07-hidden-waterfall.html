@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 07 - Hidden Waterfall</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 07</div>
+<h1>Hidden Waterfall</h1>
+<div class="subtitle">Off the main trail, rocks ke peeche, past all the noise — there's always a hidden gem for those who actually bother to look.</div>
+<div class="level" id="quiz">
+<div class="question">What's my chai order? ☕</div>
+<div class="option" onclick="check('a')">Cutting chai</div>
+<div class="option" onclick="check('b')">Adrak wali chai</div>
+<div class="option" onclick="check('c')">Black coffee (rebel move)</div>
+<div class="option" onclick="check('d')">Whatever's cheapest</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">📸 Memory Unlocked</div>
+<h3>Waterfall Found!</h3>
+<p>Adrak wali chai supremacy. No debate. The spicier, the better — just like your personality. 😌🍵</p>
+<img src="images/level7.jpg" alt="Chai Memory" class="memory-photo">
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Nope. Think spicy.","Wrong brew ☕","You haven't paid attention at chai stops 😤","Hint: it has a kick 🫚"];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

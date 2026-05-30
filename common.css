@@ -1,0 +1,54 @@
+body{margin:0;font-family:'Georgia',serif;color:#3d3d3d;background:url('images/lake.jpeg') center/cover no-repeat fixed;min-height:100vh;overflow-x:hidden;}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px;position:relative;z-index:1;}
+.card{max-width:600px;width:100%;background:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.6);border-radius:20px;padding:32px;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:relative;z-index:2;}
+.badge{letter-spacing:3px;font-size:11px;color:#7a9e7e;text-transform:uppercase;font-weight:bold;}
+h1{margin:14px 0;font-size:30px;color:#2e4a3e;font-style:italic;}
+.subtitle{color:#6b7c6b;line-height:1.8;font-size:15px;}
+.level{margin-top:24px;padding:20px;border-radius:14px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.5);}
+.question{font-size:17px;margin-bottom:18px;color:#2e4a3e;font-weight:bold;}
+.option{display:block;margin:10px auto;max-width:300px;padding:13px;border-radius:10px;background:#f7f5f0;cursor:pointer;border:1px solid #ddd9d0;transition:all .2s;color:#3d3d3d;}
+.option:hover{background:#eaf5ee;border-color:#7a9e7e;transform:translateY(-1px);}
+.option.disabled{pointer-events:none;opacity:.5;}
+.option.correct{background:#d4edda;border-color:#2e6b4a;}
+.wrong-msg{color:#c0392b;margin-top:12px;font-size:14px;min-height:20px;}
+#reward{display:none;margin-top:20px;padding:20px;border-radius:14px;background:#f0faf4;border:1px solid #c8e6d0;}
+#reward h3{color:#2e6b4a;margin:8px 0;}
+#reward p{color:#4a6b5a;line-height:1.7;font-size:15px;}
+.reward-badge{font-weight:bold;letter-spacing:2px;font-size:11px;margin-bottom:8px;color:#b87333;text-transform:uppercase;}
+.memory-photo{width:100%;max-width:100%;height:auto;display:block;border-radius:12px;margin:15px auto;object-fit:cover;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+video{width:100%;border-radius:12px;margin-top:12px;}
+audio{width:100%;margin-top:12px;}
+.roast-card{background:#fef9f3;border:1px solid #f0dcc8;border-radius:12px;padding:18px;margin-top:12px;font-size:15px;line-height:1.7;color:#5a3e2a;}
+.letter-reward{background:#fffdf7;border:1px solid #e8dfc8;border-radius:12px;padding:20px;margin-top:12px;font-size:15px;line-height:1.9;font-style:italic;color:#4a3e2a;}
+.continue-btn{display:inline-block;margin-top:18px;padding:12px 28px;background:#2e6b4a;color:#fff;border:none;border-radius:30px;font-size:14px;font-weight:bold;cursor:pointer;letter-spacing:1px;transition:background .2s;}
+.continue-btn:hover{background:#245a3e;}
+
+/* Floating leaves */
+.leaf{position:fixed;font-size:var(--sz,14px);opacity:.4;z-index:0;pointer-events:none;animation:fall var(--d,9s) linear infinite;animation-delay:var(--dl,0s);}
+@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:.5;}100%{transform:translateY(105vh) rotate(300deg);opacity:0;}}
+
+/* Desktop */
+@media(min-width:768px){
+h1{font-size:36px;}
+.subtitle{font-size:16px;}
+.question{font-size:19px;}
+.card{padding:40px 48px;}
+body{background-image:url('images/boat.jpeg');}
+}
+
+/* Mobile */
+@media(max-width:480px){
+.hero{padding:16px;min-height:auto;padding-top:36px;padding-bottom:36px;}
+.card{padding:22px 16px;border-radius:16px;}
+h1{font-size:22px;margin:10px 0;}
+.subtitle{font-size:13px;line-height:1.6;}
+.level{padding:14px;margin-top:18px;}
+.question{font-size:14px;margin-bottom:14px;}
+.option{padding:11px;font-size:13px;}
+#reward{padding:14px;}
+#reward h3{font-size:15px;}
+#reward p{font-size:13px;}
+.roast-card{font-size:13px;padding:14px;}
+.letter-reward{font-size:13px;padding:14px;}
+.continue-btn{font-size:13px;padding:10px 24px;}
+}

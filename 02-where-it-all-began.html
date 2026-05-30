@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 02 - Where It All Began</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 02</div>
+<h1>Where It All Began</h1>
+<div class="subtitle">Every great journey starts somewhere na. Before the chaos, before the memories — ek jagah thi where this whole story kicked off.</div>
+<div class="level" id="quiz">
+<div class="question">Which city gave me an unexpected travel companion that I apparently can't get rid of now? 😌</div>
+<div class="option" onclick="check('a')">Delhi</div>
+<div class="option" onclick="check('b')">Jaipur</div>
+<div class="option" onclick="check('c')">Manali</div>
+<div class="option" onclick="check('d')">Udaipur</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">📸 Memory Unlocked</div>
+<h3>Destination Found!</h3>
+<p>One random trip turned into one of my favourite stories. Who knew a Manali trip would come with a lifetime subscription to my presence? 😂</p>
+<img src="images/manali.jpg" alt="Manali Memory" class="memory-photo">
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='c'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Wrong trail. Check your memories.","You're lost already 😂","The mountains are judging you 🏔️","Think harder, explorer 💀"];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

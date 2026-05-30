@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 17 - Night Sky Camp</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 17</div>
+<h1>Night Sky Camp</h1>
+<div class="subtitle">Lying under the stars, no roof, no walls. Just us and a sky full of possibilities we haven't explored yet.</div>
+<div class="level" id="quiz">
+<div class="question">What's the one trip we keep saying "next year pakka" but haven't done yet? ⭐</div>
+<div class="option" onclick="check('a')">Goa (the cliché one)</div>
+<div class="option" onclick="check('b')">A proper Himalayan trek</div>
+<div class="option" onclick="check('c')">Road trip with no fixed destination</div>
+<div class="option" onclick="check('d')">International trip (the big dream)</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">📸 Photo Unlocked</div>
+<h3>Stars Counted!</h3>
+<p>The Himalayan trek. We've talked about it so many times it's basically a running joke now. But this year? No more "next year." 🏔️⭐</p>
+<img src="images/level17.jpg" alt="Night Sky" class="memory-photo">
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ We want that too, but there's one that haunts us.","The one we've planned 100 times 🏔️","Think mountains. Think effort. Think 'next year.'","It involves actual physical effort. That's the clue."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

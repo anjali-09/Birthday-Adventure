@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 03 - Mountain Trail</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 03</div>
+<h1>Mountain Trail</h1>
+<div class="subtitle">Bhai trail itni steep hai na, but the views make it all worth it. One question before you move ahead though.</div>
+<div class="level" id="quiz">
+<div class="question">What's the one thing I always forget to pack no matter how many trips we plan? 🧳</div>
+<div class="option" onclick="check('a')">Charger</div>
+<div class="option" onclick="check('b')">Toothbrush</div>
+<div class="option" onclick="check('c')">Extra clothes</div>
+<div class="option" onclick="check('d')">Common sense</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">📸 Memory Unlocked</div>
+<h3>Trail Cleared!</h3>
+<p>Correct! Common sense was never in the luggage. Never has been, never will be. 😂</p>
+<img src="images/level3.jpg" alt="Funny Photo" class="memory-photo">
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='d'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Nope. Think funnier.","Still wrong 😂","Come on, you KNOW this 💀","Last brain cell loading... 🧠"];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

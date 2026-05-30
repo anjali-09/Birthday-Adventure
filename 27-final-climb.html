@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 27 - Final Climb</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 27</div>
+<h1>Final Climb</h1>
+<div class="subtitle">Two more steps. The summit is right there. You can almost see the flag from here.</div>
+<div class="level" id="quiz">
+<div class="question">After 29 years and all these memories — what's the one word that describes us? 🏔️</div>
+<div class="option" onclick="check('a')">Chaos</div>
+<div class="option" onclick="check('b')">Home</div>
+<div class="option" onclick="check('c')">Unbreakable</div>
+<div class="option" onclick="check('d')">Inevitable</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🎵 Audio Teaser Unlocked</div>
+<h3>Almost at the Peak!</h3>
+<p>Home. Not a place — a person. No matter where life takes us, that's what this is. And that's never changing. 🏠</p>
+<audio controls src="audio/level27.mp3"></audio>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Close, but deeper.","Not a word about chaos. About comfort.","Where do you feel most yourself? 🏠","It's not a place. It's a feeling."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

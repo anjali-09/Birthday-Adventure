@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 10 - Railway Junction</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 10</div>
+<h1>Railway Junction</h1>
+<div class="subtitle">Platform pe khade ho, train aane wali hai. Remember how our best plans always start with "chal kahi chalte hain"?</div>
+<div class="level" id="quiz">
+<div class="question">What's the most spontaneous thing we've ever done together? 🚃</div>
+<div class="option" onclick="check('a')">Booked a trip 2 hours before leaving</div>
+<div class="option" onclick="check('b')">Drove somewhere with no destination</div>
+<div class="option" onclick="check('c')">Stayed up all night talking about nothing</div>
+<div class="option" onclick="check('d')">Said yes to a plan we both knew was stupid</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🎵 Voice Note Unlocked</div>
+<h3>Train Boarded!</h3>
+<p>That last-minute booking energy is unmatched. No planning, no thinking, just "chal" and we're gone. Best decisions are always the dumbest ones. 🚂✨</p>
+<audio controls src="audio/level10.mp3"></audio>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Spontaneous, but not THE one.","Think last-minute chaos energy 🚂","The one that was absolutely unplanned.","2 hours. That's all it took."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 28 - The Peak</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 28</div>
+<h1>The Peak</h1>
+<div class="subtitle">You made it. 28 checkpoints done. One more to go. But first — look back at how far we've come together.</div>
+<div class="level" id="quiz">
+<div class="question">What do you think this whole adventure has been building up to? 🎁</div>
+<div class="option" onclick="check('a')">A surprise gift reveal</div>
+<div class="option" onclick="check('b')">A reminder of how much you matter</div>
+<div class="option" onclick="check('c')">Proof that someone put actual effort into your birthday</div>
+<div class="option" onclick="check('d')">All of the above, obviously</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🎁 Final Reveal Preparation</div>
+<h3>Peak Reached!</h3>
+<p>All of it. Every level, every question, every reward — it was all to say one thing: you matter. More than you know. Now get ready for the finale. 🎁✨</p>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='d'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ That's part of it, but not all.","Think bigger. Think everything.","Why settle for one when it's all of them?","The answer is greedy. Like you deserve. 🎁"];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

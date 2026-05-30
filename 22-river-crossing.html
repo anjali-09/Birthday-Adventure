@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 22 - River Crossing</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 22</div>
+<h1>River Crossing</h1>
+<div class="subtitle">The current is strong but we've crossed worse together. Some rivers you can't cross alone — and you never had to.</div>
+<div class="level" id="quiz">
+<div class="question">If we could go back to one moment we shared together, which one would it be? 🌊</div>
+<div class="option" onclick="check('a')">That first trip where everything clicked</div>
+<div class="option" onclick="check('b')">A random Tuesday that turned legendary</div>
+<div class="option" onclick="check('c')">The night we talked until sunrise</div>
+<div class="option" onclick="check('d')">We wouldn't go back — we'd make new ones</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">📝 Travel Promise Unlocked</div>
+<h3>River Crossed!</h3>
+<div class="letter-reward">We don't look back — we look forward. Every memory we've made is proof that the next one will be even better. So here's the promise: more trips, more chaos, more stories. The best is still ahead. 🌊✨</div>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='d'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Beautiful, but we're not the nostalgic type.","Think forward, not backward 🌊","We don't dwell. We create.","New memories > old ones. Always."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

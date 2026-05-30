@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 13 - Tea Point</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 13</div>
+<h1>Tea Point</h1>
+<div class="subtitle">Another chai break because honestly, when have we ever said no to one more cup together?</div>
+<div class="level" id="quiz">
+<div class="question">What's the one promise we've made to each other that we actually intend to keep? 🤞</div>
+<div class="option" onclick="check('a')">One international trip before 30</div>
+<div class="option" onclick="check('b')">Always be honest, even when it's uncomfortable</div>
+<div class="option" onclick="check('c')">Never let distance change things between us</div>
+<div class="option" onclick="check('d')">Show up for each other's big moments, no matter what</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🎬 Video Unlocked</div>
+<h3>Tea Break Done!</h3>
+<p>One international trip before 30. The countdown is on. No excuses, no backing out. This one's happening. ✈️🤞</p>
+<video controls src="videos/level13.mp4"></video>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ We believe in all of these, but one has a deadline.","Think about what has a ticking clock ⏰","The one with a number attached to it.","Before 30. That's the clue. ✈️"];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

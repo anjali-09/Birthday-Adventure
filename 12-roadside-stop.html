@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 12 - Roadside Stop</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 12</div>
+<h1>Roadside Stop</h1>
+<div class="subtitle">Random dhaba, plastic chairs, maggi that tastes better than any restaurant. Our best memories are always unplanned.</div>
+<div class="level" id="quiz">
+<div class="question">What's the one inside joke between us that nobody else would understand? 😂</div>
+<div class="option" onclick="check('a')">A random word that makes us both crack up</div>
+<div class="option" onclick="check('b')">That one incident we promised to never speak of</div>
+<div class="option" onclick="check('c')">A nickname that started as an insult</div>
+<div class="option" onclick="check('d')">A look that means "let's leave right now"</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">📸 Memory Unlocked</div>
+<h3>Pit Stop Complete!</h3>
+<p>That look. No words needed. One glance and we both know it's time to bounce. Years of friendship compressed into one expression. 😂👀</p>
+<img src="images/level12.jpg" alt="Roadside Memory" class="memory-photo">
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='d'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ We have that too, but think visual.","The one that needs zero words 👀","No talking required for this one.","It's a look. THE look."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

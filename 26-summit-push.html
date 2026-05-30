@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 26 - Summit Push</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 26</div>
+<h1>Summit Push</h1>
+<div class="subtitle">The final stretch. Legs are tired, lungs are burning, but we didn't come this far to only come this far.</div>
+<div class="level" id="quiz">
+<div class="question">What's the one thing we always say to each other when things get tough? 💪</div>
+<div class="option" onclick="check('a')">"Chal hoga, tension mat le"</div>
+<div class="option" onclick="check('b')">"Worst case kya hoga?"</div>
+<div class="option" onclick="check('c')">"Tu hai na, bas"</div>
+<div class="option" onclick="check('d')">"Nikal, trip pe chalte hain"</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🎬 Suspense Video Unlocked</div>
+<h3>Almost There!</h3>
+<p>"Chal hoga" — two words that have gotten us through more than any motivational speech ever could. Simple, stupid, and somehow always enough. 💪</p>
+<video controls src="videos/level26.mp4"></video>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ We say that too, but there's a default.","The one that comes out first. Always.","Two words. No thinking required.","Chal hoga. That's the one."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

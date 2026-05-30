@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 06 - Boating Point</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 06</div>
+<h1>Boating Point</h1>
+<div class="subtitle">Lake bilkul still hai, boat dheere chal rahi hai. It's that kind of calm where truths just slip out and excuses don't work anymore.</div>
+<div class="level" id="quiz">
+<div class="question">What's my go-to excuse when I'm running late? ⏰</div>
+<div class="option" onclick="check('a')">"5 minutes away"</div>
+<div class="option" onclick="check('b')">"Just left"</div>
+<div class="option" onclick="check('c')">"Traffic hai bhai"</div>
+<div class="option" onclick="check('d')">All of the above</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">🔥 Roast Unlocked</div>
+<h3>Boat Docked!</h3>
+<p>Obviously it's all of them. The full combo, every single time. 😂</p>
+<div class="roast-card">🔥 <strong>Official Roast #1:</strong><br><br>You have a PhD in being late. If punctuality was a sport, you'd be banned for doping — on excuses. "5 minutes" in your dictionary means "I haven't even showered yet." The audacity is Olympic-level. 🏅💀</div>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='d'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ That's just ONE of them...","Think bigger. Think combo 😂","You're underestimating the excuse game 💀","The full arsenal, obviously 🛡️"];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

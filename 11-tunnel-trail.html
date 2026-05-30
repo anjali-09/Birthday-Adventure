@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 11 - Tunnel Trail</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 11</div>
+<h1>Tunnel Trail</h1>
+<div class="subtitle">Dark tunnel, no signal, just us and our thoughts. Some of our best conversations happened in places like this.</div>
+<div class="level" id="quiz">
+<div class="question">What's the one topic we can talk about for hours without getting bored? 💬</div>
+<div class="option" onclick="check('a')">Future travel plans that may never happen</div>
+<div class="option" onclick="check('b')">Roasting people we both know</div>
+<div class="option" onclick="check('c')">Life, goals, and "what if" scenarios</div>
+<div class="option" onclick="check('d')">Reliving old trips like they happened yesterday</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">💌 Letter Unlocked</div>
+<h3>Tunnel Crossed!</h3>
+<div class="letter-reward">We've planned trips to 15 different places, made itineraries at 3 AM, saved reels of places we'll "definitely go next month." Most of them haven't happened yet. But honestly? The planning is half the fun. And one day, we'll tick them all off. 🗺️</div>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ We do that too, but there's one that never ends.","Think about our 3 AM conversations 🗺️","The one topic with infinite content.","Plans that live in our notes app forever."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

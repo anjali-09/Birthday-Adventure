@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 25 - Cloud Trail</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 25</div>
+<h1>Cloud Trail</h1>
+<div class="subtitle">Walking through clouds, can barely see ahead. But we've always figured it out together, even when the path wasn't clear.</div>
+<div class="level" id="quiz">
+<div class="question">What would we title the movie of our friendship? 🎬</div>
+<div class="option" onclick="check('a')">Dil Chahta Hai 2.0</div>
+<div class="option" onclick="check('b')">Two Idiots, One Map</div>
+<div class="option" onclick="check('c')">No Signal, Full Bars</div>
+<div class="option" onclick="check('d')">Zindagi Na Milegi Dobara (but budget version)</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">💌 Letter Unlocked</div>
+<h3>Clouds Cleared!</h3>
+<div class="letter-reward">ZNMD but budget version. That's literally us. Same energy, same dreams, same "let's just go" attitude — just with less money and more jugaad. And honestly? Our version is better. Because it's real. 🎬❤️</div>
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='d'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Good title, but not ours.","Think Bollywood but broke 😂","Same vibe, smaller budget.","Budget version. That's the key word."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>

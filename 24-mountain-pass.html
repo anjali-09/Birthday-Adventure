@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 24 - Mountain Pass</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 24</div>
+<h1>Mountain Pass</h1>
+<div class="subtitle">The highest point before the summit. The air is thin but the view is everything. Almost there now.</div>
+<div class="level" id="quiz">
+<div class="question">What's the one photo of us together that you'd save if you could only keep one? 📸</div>
+<div class="option" onclick="check('a')">The one where we look cool (rare)</div>
+<div class="option" onclick="check('b')">The ugly candid that makes us laugh every time</div>
+<div class="option" onclick="check('c')">The one from our first trip together</div>
+<div class="option" onclick="check('d')">The one nobody else has seen</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">📸 Photo Collage Unlocked</div>
+<h3>Pass Conquered!</h3>
+<p>The ugly candid. Always. Because that's the real us — no poses, no filters, just two idiots having the time of their lives. 😂📸</p>
+<img src="images/level24.jpg" alt="Photo Collage" class="memory-photo">
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Nice, but not the one that matters.","Think ugly. Think real. Think funny 😂","The one that makes you laugh, not look good.","Candid > posed. Always."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>
