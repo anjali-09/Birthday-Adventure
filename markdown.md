@@ -348,4 +348,3 @@ The final reveal should feel like:
 
 Tone:
 Funny + Emotional + Memorable
-
