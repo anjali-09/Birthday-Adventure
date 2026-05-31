@@ -21,10 +21,9 @@
 <div class="wrong-msg" id="wrong-msg"></div>
 </div>
 <div id="reward">
-<div class="reward-badge">🎵 Voice Note Unlocked</div>
+<div class="reward-badge">💌 Birthday Letter Unlocked</div>
 <h3>Bridge Crossed!</h3>
-<p>Distance tried its best. Different cities, different schedules, different lives. But somehow we stayed exactly the same. That's not luck — that's choice. 🌉</p>
-<audio controls src="audio/level16.mp3"></audio>
+<div class="letter-reward">Another year of you being chaotic and me somehow going along with it. Wouldn't change a thing honestly. Happy birthday yaar — hope it's as good as you deserve. 🥂😂</div>
 </div>
 </div>
 </section>
@@ -32,7 +31,7 @@
 <script>
 let wrongs=0;
 function check(ans){
-if(ans==='d'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
 else{wrongs++;const r=["❌ We've had that, but something bigger tested us.","Think about what actually tried to pull us apart.","The silent test. The long one.","Distance. That's the real bridge."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
 }
 </script>
