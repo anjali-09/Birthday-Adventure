@@ -3,28 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checkpoint 20 - Lakeside Reflection</title>
+<title>Checkpoint 20 - Dare Happened</title>
 <link rel="stylesheet" href="common.css">
 </head>
 <body>
 <section class="hero">
 <div class="card">
 <div class="badge">🗺️ Checkpoint 20</div>
-<h1>Lakeside Reflection</h1>
-<div class="subtitle">Still water, clear sky, and that rare moment where we're both quiet at the same time. Doesn't happen often.</div>
+<h1>The Dare That Actually Happened</h1>
+<div class="subtitle">Some dares get laughed off. Some get negotiated. And some… somehow actually happen. This was one of those. 😂</div>
 <div class="level" id="quiz">
-<div class="question">What's the one thing we'd both agree makes a perfect day together? 🌊</div>
-<div class="option" onclick="check('a')">Good food, no plans, nowhere to be</div>
-<div class="option" onclick="check('b')">An adventure that goes slightly wrong</div>
-<div class="option" onclick="check('c')">Driving somewhere with good music</div>
-<div class="option" onclick="check('d')">Doing absolutely nothing but still having fun</div>
+<div class="question">What did it take for me to finally open the car door? 🚗</div>
+<div class="option" onclick="check('a')">A full apology with eye contact 😂</div>
+<div class="option" onclick="check('b')">Dancing on the road because the door wasn't opening otherwise 🕺😂</div>
+<div class="option" onclick="check('c')">Saying the magic word — please, obviously 🙏</div>
+<div class="option" onclick="check('d')">Promising to never tell anyone what just happened</div>
 <div class="wrong-msg" id="wrong-msg"></div>
 </div>
 <div id="reward">
-<div class="reward-badge">📸 Photo Unlocked</div>
-<h3>Lake Reached!</h3>
-<p>No plans, good food, and zero pressure to be anywhere. That's our version of a perfect day. Simple, stupid, and exactly right. 🌊😌</p>
-<img src="images/level20.jpg" alt="Lakeside" class="memory-photo">
+<div class="reward-badge">📸 Video Unlocked</div>
+<h3>Dare Completed!</h3>
+<p>The car was locked. The dare was made. And somehow — somehow — it got completed. On a public road. No hesitation. That's not friendship, that's loyalty of a different kind entirely. 🕺😂</p>
+<video controls src="videos/dare.MOV"></video>
 </div>
 </div>
 </section>
@@ -32,7 +32,7 @@
 <script>
 let wrongs=0;
 function check(ans){
-if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
 else{wrongs++;const r=["❌ Fun, but not the perfect formula.","Think simpler. Way simpler.","No effort required. That's the key.","Food + no plans. That's it."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
 }
 </script>

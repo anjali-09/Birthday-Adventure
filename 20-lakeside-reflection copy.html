@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkpoint 20 - Lakeside Reflection</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<section class="hero">
+<div class="card">
+<div class="badge">🗺️ Checkpoint 20</div>
+<h1>Lakeside Reflection</h1>
+<div class="subtitle">Still water, clear sky, and that rare moment where we're both quiet at the same time. Doesn't happen often.</div>
+<div class="level" id="quiz">
+<div class="question">What's the one thing we'd both agree makes a perfect day together? 🌊</div>
+<div class="option" onclick="check('a')">Good food, no plans, nowhere to be</div>
+<div class="option" onclick="check('b')">An adventure that goes slightly wrong</div>
+<div class="option" onclick="check('c')">Driving somewhere with good music</div>
+<div class="option" onclick="check('d')">Doing absolutely nothing but still having fun</div>
+<div class="wrong-msg" id="wrong-msg"></div>
+</div>
+<div id="reward">
+<div class="reward-badge">📸 Photo Unlocked</div>
+<h3>Lake Reached!</h3>
+<p>No plans, good food, and zero pressure to be anywhere. That's our version of a perfect day. Simple, stupid, and exactly right. 🌊😌</p>
+<img src="images/level20.jpg" alt="Lakeside" class="memory-photo">
+</div>
+</div>
+</section>
+<script src="animations.js"></script>
+<script>
+let wrongs=0;
+function check(ans){
+if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+else{wrongs++;const r=["❌ Fun, but not the perfect formula.","Think simpler. Way simpler.","No effort required. That's the key.","Food + no plans. That's it."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
+}
+</script>
+</body>
+</html>
