@@ -14,17 +14,17 @@
 <div class="subtitle">A valley full of colours, fresh air, and that rare silence where neither of us needs to say anything.</div>
 <div class="level" id="quiz">
 <div class="question">What's our unspoken rule that we've never actually said out loud? 🤝</div>
-<div class="option" onclick="check('a')">Never screenshot each other's emotional texts</div>
+<div class="option" onclick="check('a')">Always honest, even when it hurts — but gently 😅</div>
 <div class="option" onclick="check('b')">If one calls at 2 AM, the other picks up</div>
 <div class="option" onclick="check('c')">No judging each other's worst decisions</div>
-<div class="option" onclick="check('d')">We don't talk about that one night</div>
+<div class="option" onclick="check('d')">All of the above</div>
 <div class="wrong-msg" id="wrong-msg"></div>
 </div>
 <div id="reward">
 <div class="reward-badge">📸 Scenic Photo Unlocked</div>
 <h3>Garden Explored!</h3>
 <p>2 AM calls, no questions asked. That's not a rule we made — it's just how it's always been. And that's what makes this different. 🌙</p>
-<img src="images/level9.jpg" alt="Scenic Photo" class="memory-photo">
+<img src="images/garden.JPG" alt="Scenic Photo" class="memory-photo">
 </div>
 </div>
 </section>
@@ -32,7 +32,7 @@
 <script>
 let wrongs=0;
 function check(ans){
-if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+if(ans==='d'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
 else{wrongs++;const r=["❌ Close but not the real one.","Think about what actually matters at 2 AM 🌙","The one that's never been said but always followed.","It's simpler than you think."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
 }
 </script>
