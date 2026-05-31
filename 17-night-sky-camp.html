@@ -23,8 +23,8 @@
 <div id="reward">
 <div class="reward-badge">📸 Photo Unlocked</div>
 <h3>Stars Counted!</h3>
-<p>The Himalayan trek. We've talked about it so many times it's basically a running joke now. But this year? No more "next year." 🏔️⭐</p>
-<img src="images/level17.jpg" alt="Night Sky" class="memory-photo">
+<p>Goa Trip. We've talked about it so many times it's basically a running joke now. But this year? No more "next year." 🏔️⭐</p>
+<img src="images/boating.jpeg" alt="Night Sky" class="memory-photo">
 </div>
 </div>
 </section>
@@ -32,7 +32,7 @@
 <script>
 let wrongs=0;
 function check(ans){
-if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
 else{wrongs++;const r=["❌ We want that too, but there's one that haunts us.","The one we've planned 100 times 🏔️","Think mountains. Think effort. Think 'next year.'","It involves actual physical effort. That's the clue."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
 }
 </script>

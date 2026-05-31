@@ -21,10 +21,9 @@
 <div class="wrong-msg" id="wrong-msg"></div>
 </div>
 <div id="reward">
-<div class="reward-badge">🔥 Roast Unlocked</div>
+<div class="reward-badge">🔥 Honesty is everything/div>
 <h3>Cabin Unlocked!</h3>
-<p>We don't talk for weeks and then pick up exactly where we left off. People find that weird. We find it perfect. 🏡</p>
-<div class="roast-card">🔥 <strong>Official Roast #3:</strong><br><br>You disappear for 2 weeks, no text, no call, nothing. Then suddenly at 1 AM: "bhai sun." And I'm supposed to act like that's normal? It IS normal for us. But still. The audacity. 💀😂</div>
+<img src="images/fight.jpg" alt="Night Sky" class="memory-photo">
 </div>
 </div>
 </section>
@@ -32,7 +31,7 @@
 <script>
 let wrongs=0;
 function check(ans){
-if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+if(ans==='c'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
 else{wrongs++;const r=["❌ True but not what shocks people.","Think about our texting frequency 😂","The thing that looks weird from outside.","No daily texts. Still solid. That's the one."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
 }
 </script>
