@@ -32,7 +32,7 @@
 <script>
 let wrongs=0;
 function check(ans){
-if(ans==='a'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
+if(ans==='b'){document.querySelectorAll('.option').forEach(o=>{o.classList.add('disabled')});document.getElementById('wrong-msg').textContent='';document.getElementById('reward').style.display='block';}
 else{wrongs++;const r=["❌ Bad advice, but not THE one.","Think about what we say before risky moves 🚀","Two words. That's all it takes.","Just. Send. It."];document.getElementById('wrong-msg').textContent=r[Math.min(wrongs-1,r.length-1)];}
 }
 </script>
